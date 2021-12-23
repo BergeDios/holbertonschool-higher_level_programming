@@ -8,19 +8,19 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
-    operator = argv[2]
-    if operator != "+" and operator != "-" and operator != "*" and operator != "/":
-        print ("Unknown operator. Available operators: +, -, * and /")
+    oper = argv[2]
+    if oper != "+" and oper != "-" and oper != "*" and oper != "/":
+        print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
     a = int(argv[1])
     b = int(argv[3])
 
-    if operator == "+":
+    if oper == "+":
         print("{} + {} = {}".format(a, b, add(a, b)))
-    elif operator == "-":
+    elif oper == "-":
         print("{} - {} = {}".format(a, b, sub(a, b)))
-    elif operator == "*":
+    elif oper == "*":
         print("{} * {} = {}".format(a, b, mul(a, b)))
     else:
         print("{} / {} = {}".format(a, b, div(a, b)))
