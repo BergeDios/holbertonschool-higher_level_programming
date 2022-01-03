@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def add_tuple(tuple_a=(), tuple_b=()):
     lengtha = len(tuple_a)
     lengthb = len(tuple_b)
@@ -22,5 +23,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     else:
         b1 = tuple_b[0]
         b2 = tuple_b[1]
+
     new_tuple = (a1 + b1, a2 + b2)
+
     return (new_tuple)
