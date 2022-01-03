@@ -49,7 +49,10 @@ int is_palindrome(listint_t **head)
 		if ((*head)->n == reversed->n)
 			i++;
 		else
+		{
+			free_listint(reversed);
 			return (0);
+		}
 	}
 	free_listint(reversed);
 	return (1);
