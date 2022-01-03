@@ -30,13 +30,15 @@ int is_palindrome(listint_t **head)
 	listint_t *reversed, *tmp;
 	int count = 0, i = 0;
 
-	reversed = malloc(sizeof(listint_t));
-	if (!reversed)
-		return (-1);
 	if (head == NULL)
 		return (0);
 	if (*head == NULL)
 		return (1);
+	if ((*head)->next == NULL)
+		return (1);
+	reversed = malloc(sizeof(listint_t));
+	if (!reversed)
+		return (-1);
 	tmp = *head;
 	while (tmp != NULL)
 	{
