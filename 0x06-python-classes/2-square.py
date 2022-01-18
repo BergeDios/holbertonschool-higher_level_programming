@@ -2,6 +2,8 @@
 """
 Module 2-square
 """
+
+
 class Square:
     """Class that defines square by its size"""
     def __init__(self, size=0):
