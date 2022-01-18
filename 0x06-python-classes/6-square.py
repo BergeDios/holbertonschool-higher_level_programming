@@ -9,8 +9,8 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Method of initialization of square object"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -33,7 +33,7 @@ class Square:
         return self.__position
 
     @position.setter
-    def poistion(self, value):
+    def position(self, value):
         """ method to set position value"""
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -55,14 +55,14 @@ class Square:
     def my_print(self):
         """method prints a # square according to size value"""
 
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
+            for i in range(self.position[1]):
                 print()
-            for j in range(0, self.__size):
-                for k in range(self.__position[0]):
+            for j in range(0, self.size):
+                for k in range(self.position[0]):
                     print(" ", end="")
-                for p in range(self.__size):
+                for p in range(self.size):
                     print("#", end="")
                 print()
