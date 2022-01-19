@@ -55,18 +55,23 @@ class Square:
     def __lt__(self, other):
         """< comparison function override"""
         return((self.area()) < (other.area()))
+
     def __le__(self, other):
         """<= comparison function override"""
         return((self.area()) <= (other.area()))
+    
     def __eq__(self, other):
         """== comparison function override"""
         return((self.area()) == (other.area()))
+    
     def __ne__(self, other):
         """!= comparison function override"""
         return((self.area()) != (other.area()))
+    
     def __gt__(self, other):
         """> comparison function override"""
         return((self.area()) > (other.area()))
+    
     def __ge__(self, other):
         """>= comparison function override"""
         return((self.area()) >= (other.area()))
