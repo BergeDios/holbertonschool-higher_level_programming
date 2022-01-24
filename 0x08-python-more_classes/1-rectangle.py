@@ -20,7 +20,7 @@ class Rectangle:
             height: height of the rectangle
 
         """
-        self. height = height
+        self.height = height
         self.width = width
 
     @property
