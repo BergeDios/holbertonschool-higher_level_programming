@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
 
-Module 2-rectangle
+Module 3-rectangle
 
 Class that defines a triangle with pvt att: width and height
-Public Methods: area and perimeter
+Public Methods: area and perimeter, str update
+
 
 """
 
@@ -106,3 +107,19 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return (2 * self.width) + (2 * self.height)
+
+    def __str__(self):
+        """Method that returns rectangle filled with #
+
+        Returns:
+            rectangle as str of #
+
+        """
+
+        rectangle = ""
+
+        if self.width == 0 or self.height == 0:
+            return rectangle
+        for line in range(self.height):
+            rectangle += (("#" * self.width) + "\n")
+        return rectangle[:-1]

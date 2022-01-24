@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
 
-Module 2-rectangle
+Module 8-rectangle
 
 Class that defines a triangle with pvt att: width and height
-Public Methods: area and perimeter
+Public Methods: area and perimeter, str update, repr update
+
 
 """
 
@@ -13,6 +14,9 @@ class Rectangle:
     """Class defining a Rectangle
         Attributes: (pvt)Width, (pvt)Height
         Methods: (pub)area, (pub)perimeter"""
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Method that initializes the instance
@@ -24,6 +28,7 @@ class Rectangle:
         """
         self.height = height
         self.width = width
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -106,3 +111,61 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return (2 * self.width) + (2 * self.height)
+
+    def __str__(self):
+        """Method that returns rectangle filled with #
+
+        Returns:
+            rectangle as str of #
+
+        """
+
+        rectangle = ""
+
+        if self.width == 0 or self.height == 0:
+            return rectangle
+        for line in range(self.height):
+            rectangle += ((str(self.print_symbol) * self.width) + "\n")
+        return rectangle[:-1]
+
+    def __repr__(self):
+        """Method returns the string representation of the isntance for eval
+
+        Returns:
+            string representation of the object
+
+        """
+
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
+
+    def __del__(self):
+        """Method to do somethifn when instance deleted"""
+
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Method that returns bigger or equal rectangle
+
+        Args:
+            rect_1: Rectangle 1
+            rect_2: Rectangle 2
+
+        Raises:
+            TypeError: when some arg is not of rectangle class
+
+        Returns:
+            the bigger rect or 1 if equal
+
+        """
+
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
