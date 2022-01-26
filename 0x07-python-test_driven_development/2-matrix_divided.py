@@ -22,7 +22,8 @@ def matrix_divided(matrix, div):
     new_matrix = []
     samelen = len(matrix[0])
     for lists in matrix:
-        if type(lists) is not list:
+        print(type(lists))
+        if not isinstance(lists, list):
             raise TypeError(msg)
         if len(lists) != samelen:
             raise TypeError("Each row of the matrix must have the same size")
