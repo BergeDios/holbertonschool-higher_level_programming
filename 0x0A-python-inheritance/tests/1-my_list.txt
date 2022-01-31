@@ -1,0 +1,67 @@
+The ``1-my_list`` module
+============================
+
+Using ``print_sorted``
+----------------------------
+
+Importing from module:
+   >>> MyList = __import__('1-my_list').MyList
+
+Testing normal print with positive ints
+>>> mylist = MyList()
+>>> mylist.append(1)
+>>> mylist.append(4)
+>>> mylist.append(3)
+>>> mylist.append(2)
+>>> mylist.append(5)
+>>> mylist.print_sorted()
+[1, 2, 3, 4, 5]
+
+Testing normal print with positive and negative ints
+>>> mylist = MyList()
+>>> mylist.append(1)
+>>> mylist.append(-4)
+>>> mylist.append(3)
+>>> mylist.append(-2)
+>>> mylist.append(5)
+>>> mylist.print_sorted()
+[-4, -2, 1, 3, 5]
+
+Testing normal print with 1 number
+>>> mylist = MyList()
+>>> mylist.append(1)
+>>> mylist.print_sorted()
+[1]
+
+Testing normal print with empty list
+>>> mylist = MyList()
+>>> mylist.print_sorted()
+[]
+
+Testing mylist is instance class list
+   >>> mylist = MyList()
+   >>> isinstance(mylist, list)
+   True
+
+Testing mylist is type MyList
+   >>> mylist = MyList()
+   >>> type(mylist) == MyList
+   True
+
+Testing mylist is subclass list
+   >>> mylist = MyList()
+   >>> issubclass(MyList, list)
+   True
+
+Testing print_sorted with extra arguments
+   >>> mylist = MyList()
+   >>> mylist.append(1)
+   >>> mylist.append(-4)
+   >>> mylist.append(3)
+   >>> mylist.append(-2)
+   >>> mylist.append(5)
+   >>> mylist.print_sorted(3)
+   Traceback (most recent call last):
+       ...
+   TypeError: print_sorted() takes 1 positional argument but 2 were given
+
