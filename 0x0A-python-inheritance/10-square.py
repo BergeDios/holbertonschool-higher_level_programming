@@ -9,7 +9,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """emptyclass"""
-    
+
     def area(self):
 
         return self.__size * self.__size

@@ -9,5 +9,6 @@ class MyInt(int):
 
     def __eq__(a, b):
         return (a is b)
+
     def __ne__(a, b):
         return (a is not b)
