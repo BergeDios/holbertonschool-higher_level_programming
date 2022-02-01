@@ -1,14 +1,14 @@
 #!/usr/bin/python3
+"""
+
+Module 12-pascal_triangle
+
+"""
+
+
 def pascal_triangle(n):
-    """ Function that returns the pascal triangle
+    """ Function that returns the pascal triangle"""
 
-    Args:
-        n: number of lines
-
-    Returns:
-        matrix: a matrix with the pascal triangle
-
-    """
 
     matrix = []
     prev = []
