@@ -9,7 +9,6 @@ Module 12-pascal_triangle
 def pascal_triangle(n):
     """ Function that returns the pascal triangle"""
 
-
     matrix = []
     prev = []
 
