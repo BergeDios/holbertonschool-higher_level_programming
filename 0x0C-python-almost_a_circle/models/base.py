@@ -71,11 +71,14 @@ class Base:
         filename = f"{cls.__name__}.json"
         list_ins = []
 
-        with open(filename, "r") as f:
-            instances = cls.from_json_string(f.read())
-        for i, dic in enumerate(instances):
-            list_ins.append(cls.create(**instances[i]))
-        return list_ins
+        try:
+            with open(filename, "r") as f:
+                instances = cls.from_json_string(f.read())
+            for i, dic in enumerate(instances):
+                list_ins.append(cls.create(**instances[i]))
+            return list_ins
+        except FileNotFoundError:
+            return list_ins
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
