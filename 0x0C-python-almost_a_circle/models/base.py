@@ -22,7 +22,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """ pass list to json representation"""
 
-        if list_dictionaries == None or list_dictionaries == "[]":
+        if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
 
         return json.dumps(list_dictionaries)
@@ -58,11 +58,12 @@ class Base:
         """create an instance"""
 
         if cls.__name__ == "Rectangle":
-            new = cls(10,10)
+            new = cls(10, 10)
         else:
             new = cls(10)
         new.update(**dictionary)
         return new
+
     @classmethod
     def load_from_file(cls):
         """ returns list of instances"""
@@ -70,24 +71,21 @@ class Base:
         filename = f"{cls.__name__}.json"
         list_ins = []
 
-        try:
-            with open(filename, "r") as f:
-                instances = cls.from_json_string(f.read())
-            for i, dic in enumerate(instances):
-                list_ins.append(cls.create(**instances[i]))
-        except:
-            pass
+        with open(filename, "r") as f:
+            instances = cls.from_json_string(f.read())
+        for i, dic in enumerate(instances):
+            list_ins.append(cls.create(**instances[i]))
         return list_ins
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """serialize to csv"""
 
         filename = cls.__name__ + ".csv"
-        
+
         with open(filename, 'w', newline='') as f:
             writer = csv.writer(f)
-            
+
             for o in list_objs:
                 if cls.__name__ == "Rectangle":
                     writer.writerow([o.id, o.width, o.height, o.x, o.y])

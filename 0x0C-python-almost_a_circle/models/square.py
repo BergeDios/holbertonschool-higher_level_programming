@@ -24,17 +24,16 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-
     def __str__(self):
         """override str function"""
 
-        return (f"[Square] ({self.id}) {self.x}/{self.y}\
+        return (f"[Square] ({self.id}) {self.x}/{self.y} \
 - {self.size}")
 
     def update(self, *args, **kwargs):
         """ update method for args"""
 
-        if args != None and len(args) != 0:
+        if args is not None and len(args) != 0:
             attr = ["id", "size", "x", "y"]
             for i in range(len(args)):
                 if attr[i] == 'size':
@@ -53,7 +52,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Returns a dictionary with attributes"""
-        attr = ['id', 'x' , 'size', 'y']
+        attr = ['id', 'x', 'size', 'y']
         res = {}
 
         for key in attr:
