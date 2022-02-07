@@ -101,15 +101,15 @@ class Base:
             for row in reader:
                 if cls.__name__ == "Rectangle":
                     dictionary = {"id": int(row[0]),
-                           "width": int(row[1]),
-                           "height": int(row[2]),
-                           "x": int(row[3]),
-                           "y": int(row[4])}
+                                  "width": int(row[1]),
+                                  "height": int(row[2]),
+                                  "x": int(row[3]),
+                                  "y": int(row[4])}
                 if cls.__name__ == "Square":
                     dictionary = {"id": int(row[0]),
-                           "size": int(row[1]),
-                           "x": int(row[2]),
-                           "y": int(row[3])}
+                                  "size": int(row[1]),
+                                  "x": int(row[2]),
+                                  "y": int(row[3])}
                 o = cls.create(**dictionary)
                 objs.append(o)
         return objs
