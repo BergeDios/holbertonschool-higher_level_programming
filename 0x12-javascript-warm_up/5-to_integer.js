@@ -1,6 +1,6 @@
 #!/usr/bin/node
-const args = process.argv.slice(2);
-const pnum = parseInt(args[0]);
+const args = process.argv;
+const pnum = parseInt(args[2]);
 if (isNaN(pnum)) {
   console.log('Not a number');
 } else {
