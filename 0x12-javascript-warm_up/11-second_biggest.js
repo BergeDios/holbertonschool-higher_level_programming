@@ -9,6 +9,5 @@ if (args.length === 0 || args.length === 1) {
     }
     args.sort((a, b) => a - b);
   }
-  console.log(args);
   console.log(args[(args.length - 2)]);
 }
