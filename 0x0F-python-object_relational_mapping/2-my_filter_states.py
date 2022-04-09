@@ -12,10 +12,11 @@ if __name__ == '__main__':
                          db=argv[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE NAME LIKE '{:s}'"
+    cur.execute("SELECT * FROM states WHERE NAME LIKE '{}' ORDER BY id ASC"
                 .format(argv[4]))
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     cur.close()
     db.close()
