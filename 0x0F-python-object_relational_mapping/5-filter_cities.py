@@ -17,6 +17,8 @@ if __name__ == '__main__':
                  ON states.id = cities.state_id
                  WHERE states.name LIKE %s""", (argv[4],))
     query_rows = cur.fetchall()
+    if not query_rows:
+        print()
     for i, row in enumerate(query_rows):
         if i == len(query_rows) - 1:
             print("{}".format(row[0]))
