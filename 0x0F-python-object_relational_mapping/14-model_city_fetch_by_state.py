@@ -2,7 +2,6 @@
 """Start link class to table in database
 """
 import sys
-from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
@@ -16,6 +15,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(engine)
     session = Session()
-    for state, city in session.query(State, City)
-    .filter(State.id == City.state_id).order_by(City.id).all():
+    re = session.query(State, City).filter(State.id == City.state_id).all()
+    for state, city in re:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
