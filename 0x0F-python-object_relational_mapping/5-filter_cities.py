@@ -13,9 +13,9 @@ if __name__ == '__main__':
                          port=3306)
     cur = db.cursor()
     cur.execute("""SELECT cities.name
-                 FROM states JOIN cities
+                 FROM states INNER JOIN cities
                  ON states.id = cities.state_id
-                 WHERE states.name = %s""", (argv[4],))
+                 WHERE states.name LIKE %s""", (argv[4],))
     query_rows = cur.fetchall()
     for i, row in enumerate(query_rows):
         if i == len(query_rows) - 1:
