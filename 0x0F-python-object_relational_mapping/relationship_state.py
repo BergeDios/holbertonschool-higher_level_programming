@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+"""
+module
+"""
+
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import backref, relationship
+from sqlalchemy.orm import relationship
 
 
 Base = declarative_base()
