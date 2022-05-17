@@ -4,7 +4,7 @@ const axios = require('axios').default;
 axios.get(process.argv[2])
   .then((response) => {
     // handle success
-    console.log('Code: ' + response.status);
+    console.log('code: ' + response.status);
   })
   .catch((error) => {
     // handle error
